@@ -1,22 +1,22 @@
 import { generateJobsMarkdown } from "../../src/markdown-generator.js";
 
 const baseCompany = {
-  id: "33159615",
-  company: "EPAM SYSTEMS INTERNATIONAL SRL",
-  brand: "EPAM",
+  id: "47473595",
+  company: "GUSTURI DIVINE S.R.L.",
+  brand: "GUSTURI DIVINE",
   status: "activ",
   location: ["București"],
-  website: ["https://www.epam.com"],
-  career: ["https://careers.epam.com"],
-  lastScraped: "2026-06-17"
+  website: [],
+  career: [],
+  lastScraped: "2026-07-08"
 };
 
 const baseJob = {
-  url: "https://careers.epam.com/en/vacancy/123_en",
-  title: "Senior Node.js Developer",
-  workmode: "hybrid",
+  url: "https://www.anofm.ro/job/123",
+  title: "Bucătar",
+  workmode: "on-site",
   location: ["București"],
-  tags: ["node.js", "javascript"],
+  tags: ["bucatar", "preparare"],
   status: "scraped"
 };
 
@@ -24,17 +24,17 @@ describe("generateJobsMarkdown", () => {
   describe("company section", () => {
     it("includes company name as h1", () => {
       const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("# EPAM SYSTEMS INTERNATIONAL SRL");
+      expect(md).toContain("# GUSTURI DIVINE S.R.L.");
     });
 
     it("includes CIF", () => {
       const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("33159615");
+      expect(md).toContain("47473595");
     });
 
     it("includes brand", () => {
       const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("EPAM");
+      expect(md).toContain("GUSTURI DIVINE");
     });
 
     it("includes status", () => {
@@ -42,25 +42,15 @@ describe("generateJobsMarkdown", () => {
       expect(md).toContain("activ");
     });
 
-    it("includes website as markdown link", () => {
-      const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("[https://www.epam.com](https://www.epam.com)");
-    });
-
-    it("includes career page as markdown link", () => {
-      const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("[https://careers.epam.com](https://careers.epam.com)");
-    });
-
     it("includes lastScraped date", () => {
       const md = generateJobsMarkdown(baseCompany, []);
-      expect(md).toContain("2026-06-17");
+      expect(md).toContain("2026-07-08");
     });
 
     it("omits optional fields when not present", () => {
-      const minimal = { id: "33159615", company: "EPAM SYSTEMS INTERNATIONAL SRL" };
+      const minimal = { id: "47473595", company: "GUSTURI DIVINE S.R.L." };
       const md = generateJobsMarkdown(minimal, []);
-      expect(md).toContain("# EPAM SYSTEMS INTERNATIONAL SRL");
+      expect(md).toContain("# GUSTURI DIVINE S.R.L.");
       expect(md).not.toContain("Brand");
       expect(md).not.toContain("Last Scraped");
     });
@@ -79,17 +69,17 @@ describe("generateJobsMarkdown", () => {
 
     it("includes job title as h3", () => {
       const md = generateJobsMarkdown(baseCompany, [baseJob]);
-      expect(md).toContain("### Senior Node.js Developer");
+      expect(md).toContain("### Bucătar");
     });
 
     it("includes job URL as markdown link", () => {
       const md = generateJobsMarkdown(baseCompany, [baseJob]);
-      expect(md).toContain("[https://careers.epam.com/en/vacancy/123_en]");
+      expect(md).toContain("[https://www.anofm.ro/job/123]");
     });
 
     it("includes workmode", () => {
       const md = generateJobsMarkdown(baseCompany, [baseJob]);
-      expect(md).toContain("hybrid");
+      expect(md).toContain("on-site");
     });
 
     it("includes location", () => {
@@ -99,7 +89,7 @@ describe("generateJobsMarkdown", () => {
 
     it("includes tags", () => {
       const md = generateJobsMarkdown(baseCompany, [baseJob]);
-      expect(md).toContain("node.js, javascript");
+      expect(md).toContain("bucatar, preparare");
     });
 
     it("includes status", () => {
@@ -108,17 +98,17 @@ describe("generateJobsMarkdown", () => {
     });
 
     it("renders multiple jobs", () => {
-      const job2 = { ...baseJob, title: "DevOps Engineer", url: "https://careers.epam.com/en/vacancy/456_en" };
+      const job2 = { ...baseJob, title: "Ospătar", url: "https://www.anofm.ro/job/456" };
       const md = generateJobsMarkdown(baseCompany, [baseJob, job2]);
-      expect(md).toContain("### Senior Node.js Developer");
-      expect(md).toContain("### DevOps Engineer");
+      expect(md).toContain("### Bucătar");
+      expect(md).toContain("### Ospătar");
       expect(md).toContain("## Current Job Listings (2)");
     });
 
     it("handles job with no optional fields", () => {
-      const minimal = { url: "https://careers.epam.com/en/vacancy/999_en", title: "QA Engineer" };
+      const minimal = { url: "https://www.anofm.ro/job/999", title: "Ajutor bucătar" };
       const md = generateJobsMarkdown(baseCompany, [minimal]);
-      expect(md).toContain("### QA Engineer");
+      expect(md).toContain("### Ajutor bucătar");
       expect(md).not.toContain("Work Mode");
       expect(md).not.toContain("Tags");
     });

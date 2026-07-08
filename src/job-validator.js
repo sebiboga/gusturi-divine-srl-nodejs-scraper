@@ -6,8 +6,8 @@
  *   keywords (catches soft-404s where status is 200 but the job is gone).
  *
  * Used by:
- *   - tests/validate-epam-jobs.js (CI nightly cleanup) — uses validateByHead
- *   - validate-jobs.js (manual deep checks)            — uses validateByContent
+ *   - tests/validate-gusturi-divine-jobs.js (CI nightly cleanup) — uses validateByHead
+ *   - validate-jobs.js (manual deep checks)                      — uses validateByContent
  */
 
 import fetch from "node-fetch";
