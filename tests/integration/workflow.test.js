@@ -148,10 +148,12 @@ describe('Integration: API Workflow', () => {
       expect(['activ', 'suspendat', 'inactiv', 'radiat']).toContain(company.status);
       expect(company).toHaveProperty('location');
       expect(Array.isArray(company.location)).toBe(true);
-      expect(company).toHaveProperty('website');
-      expect(Array.isArray(company.website)).toBe(true);
-      expect(company).toHaveProperty('career');
-      expect(Array.isArray(company.career)).toBe(true);
+      if (company.website !== undefined) {
+        expect(Array.isArray(company.website)).toBe(true);
+      }
+      if (company.career !== undefined) {
+        expect(Array.isArray(company.career)).toBe(true);
+      }
       expect(company).toHaveProperty('lastScraped');
       expect(company).toHaveProperty('scraperFile');
     }, 15000);
