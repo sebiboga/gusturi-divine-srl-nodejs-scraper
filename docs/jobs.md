@@ -10,8 +10,8 @@
 | Location | UNIRII, 313, Bucureşti Sectorul 3, Bucureşti |
 | Website |  |
 | Careers |  |
-| Last Scraped | 2026-07-08 |
+| Last Scraped | 2026-07-09 |
 
 ## Current Job Listings (0)
 
-_Generated: 2026-07-08T14:18:03.295Z_
+_Generated: 2026-07-09T06:32:17.688Z_
