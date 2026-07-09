@@ -1,0 +1,90 @@
+{
+  "validatedAt": "2026-07-09T06:38:23.914Z",
+  "source": "ANAF",
+  "brand": "gusturi-divine",
+  "anaf": {
+    "cui": 47473595,
+    "fax": "",
+    "iban": "",
+    "name": "GUSTURI DIVINE S.R.L.",
+    "phone": "0755200254",
+    "address": "UNIRII, 313, Bucureşti Sectorul 3, Bucureşti",
+    "caenCode": "1013",
+    "inactive": false,
+    "splitVat": false,
+    "legalForm": "SRL",
+    "postalCode": "30138",
+    "vatPeriods": [
+      {
+        "end": null,
+        "start": "2024-02-01",
+        "message": "",
+        "yearStart": ""
+      }
+    ],
+    "cashBasisVat": false,
+    "fiscalAddress": {
+      "county": "",
+      "number": "",
+      "street": "",
+      "country": "",
+      "locality": "",
+      "postalCode": ""
+    },
+    "inactiveSince": null,
+    "ownershipForm": "PROPR.PRIVATA-CAPITAL PRIVAT AUTOHTON",
+    "vatRegistered": true,
+    "cashBasisVatEnd": null,
+    "fiscalAuthority": "Administraţia Sector 3 a Finanţelor Publice",
+    "organizationForm": "PERSOANA JURIDICA",
+    "reactivatedSince": null,
+    "registrationDate": "18/01/2023",
+    "cashBasisVatStart": null,
+    "registrationState": "INREGISTRAT din data 18.01.2023",
+    "eFacturaRegistered": false,
+    "registrationNumber": "J2023000868407",
+    "headquartersAddress": {
+      "street": "UNIRII",
+      "number": "313",
+      "locality": "Bucureşti Sectorul 3",
+      "county": "Bucureşti",
+      "country": "România",
+      "postalCode": "30138"
+    },
+    "administrators": [
+      {
+        "name": "VOICU VALENTIN-DANIEL",
+        "role": "administrator",
+        "personId": 1385530
+      }
+    ],
+    "authorizedCaenCodes": [
+      "1011",
+      "1012",
+      "1013",
+      "4632",
+      "4722",
+      "5210",
+      "5224",
+      "8292"
+    ],
+    "onrcStatus": 1048,
+    "onrcStatusLabel": "Funcțiune",
+    "vatCheckedAt": "2026-07-08T13:59:43.927Z",
+    "vatStatus": "fresh",
+    "datoriiAnaf": null
+  },
+  "peviitor": null,
+  "summary": {
+    "company": "GUSTURI DIVINE S.R.L.",
+    "cif": "47473595",
+    "active": true,
+    "inactiveSince": null,
+    "reactivatedSince": null,
+    "address": "UNIRII, 313, Bucureşti Sectorul 3, Bucureşti",
+    "registrationNumber": "J2023000868407",
+    "caenCode": "1013",
+    "vatRegistered": true,
+    "eFacturaRegistered": false
+  }
+}
